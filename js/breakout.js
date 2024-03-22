@@ -111,10 +111,23 @@ function keyDown(e) {
     if (e.key == 'ArrowRight' || e.key == 'Right') {
         paddle.dx = paddle.speed
     }
+    if (e.key == 'ArrowLeft' || ekey == 'Left') {
+        paddle.dx = -paddle.speed
+    }
 }
+
+//Keyup event
+function keyUp(e) {
+    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'ArrowLeft' || ekey == 'Left') {
+        paddle.dx = 0
+    }
+
+}
+
 
 //Keyboard event handlers
 document.addEventListener('keydown', keyDown)
+document.addEventListener('keyup', keyUp)
 
 //Update the canvas drawing and animation
 function update() {
