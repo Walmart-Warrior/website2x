@@ -100,12 +100,20 @@ function draw() {
     drawBricks()
 }
 
-//Move paddle on canvas
+// Move paddle on canvas
 function movePaddle() {
     paddle.x = paddle.x + paddle.dx
+
+    // wall dectection
+    if (paddle.x < 0 ) (
+        paddle.x = 0
+    )
+    if (paddle.x + paddle.w > canvas.width) {
+        paddle.x = canvas.width - paddle.w
+    }
 }
 
-//Keydown Event
+// Keydown Event
 function keyDown(e) {
     // console.log(e.key)
     if (e.key == 'ArrowRight' || e.key == 'Right') {
