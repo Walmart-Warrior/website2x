@@ -132,6 +132,9 @@ function keyUp(e) {
 
 }
 
+function moveBall() {
+    ball.x = ball.x + ball.dx
+}
 
 //Keyboard event handlers
 document.addEventListener('keydown', keyDown)
@@ -139,6 +142,7 @@ document.addEventListener('keyup', keyUp)
 
 //Update the canvas drawing and animation
 function update() {
+    moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
