@@ -33,7 +33,7 @@ function createInsect() {
     const { x, y } = getRandomLocation()
     insect.style.top = `${y}px`
     insect.style.left = `${x}px`
-    insect.innerHTML = `<img src="selected_insect.src" alt="selected_insect.alt"
+    insect.innerHTML = `<img src="selected_insect.src" alt="selected_insect.alt" style="transform: rotate(${Math.random() * 360}deg)"
 }
 
 function getRandomLocation() {
@@ -41,4 +41,5 @@ function getRandomLocation() {
     const height = window.innerHeight
     const x = Math.random() * (width - 200) + 100
     const y = Math.random() * (height - 200) + 100
+    return { x, y }
 }
