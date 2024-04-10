@@ -18,5 +18,6 @@ choose_insects_btns.addEventListener(btn => {
         const img = btn.querySelector('img')
         const alt = img.getAttribute('alt')
         const src = img.getAttribute('src')
+        screens[1].classList.add('up')
     })
 })
