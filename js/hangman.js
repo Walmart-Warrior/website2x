@@ -26,6 +26,9 @@ function displayWord() {
             `).join('')
         }
     `
+
+    const innerWord = wordE1.innerText.()
+    console.log(wordE1.innerText.replace(/\n/g, ''))
 }
 
 displayWord()
