@@ -28,7 +28,11 @@ function displayWord() {
     `
 
     const innerWord = wordE1.innerText.replace(/\n/g, '')
-    console.log(wordE1.innerText, innerWord)
+
+    if (innerWord == selectedWord) {
+        finalMessage.innerText = 'Congratulations! You Won!'
+        popup.style.display = 'flex'
+    }
 }
 
 displayWord()
