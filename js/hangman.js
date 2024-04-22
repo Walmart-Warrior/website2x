@@ -26,7 +26,6 @@ function displayWord() {
             `).join('')
         }
     `
-
     const innerWord = wordE1.innerText.replace(/\n/g, '')
 
     if (innerWord == selectedWord) {
@@ -34,5 +33,10 @@ function displayWord() {
         popup.style.display = 'flex'
     }
 }
+
+// Keydown letter press
+window.addEventListener('keydown', e => {
+    console.log(e.keyCode)
+})
 
 displayWord()
