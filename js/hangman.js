@@ -1,9 +1,9 @@
-const wordE1 = document.queryElementById('word')
-const wrongLettersE1 = document.queryElementById('wrong-letters')
-const playAgainBtn = document.queryElementById('play-again')
-const popup = document.queryElementById('popup-container')
-const notification = document.queryElementById('notification-container')
-const finalMessage = document.queryElementById('final-message')
+const wordEl = document.getElementById('word')
+const wrongLettersEl = document.getElementById('wrong-letters')
+const playAgainBtn = document.getElementById('play-button')
+const popup = document.getElementById('popup-container')
+const notification = document.getElementById('notification-container')
+const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
 
 const word = ['application', 'programming', 'interface', 'wizard']
@@ -16,7 +16,7 @@ const wrongLetters = []
 
 //Show hidden word
 function displayWord() {
-    wordE1.innerHTML = `
+    wordEl.innerHTML = `
         ${selectedWord
             .split('')
             .map(letter => `
@@ -26,7 +26,7 @@ function displayWord() {
             `).join('')
         }
     `
-    const innerWord = wordE1.innerText.replace(/\n/g, '')
+    const innerWord = wordEl.innerText.replace(/\n/g, '')
 
     if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You Won!'
@@ -36,7 +36,27 @@ function displayWord() {
 
 //Update the wrong letters
 function updateWrongLettersEl() {
-    console.log('update wrong')
+    //Display wrong letters
+    wrongLettersEl.innerHTML = `
+        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+        ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+    `
+    //Display parts
+    figureParts.forEach((part, index) => {
+        const errors = wrongLetters.length
+
+        if (index < errors) {
+            part.style.display = 'block'
+        } else {
+            part.style.display = 'none'
+        }
+    })
+
+    //Check if lost
+    if (wrongLetters.length == figureParts.length) {
+        finalMessage.innerText = 'Unfortunately, you lost!'
+        popup.style.display = 'flex'
+    }
 }
 
 //Show notification
@@ -75,5 +95,22 @@ window.addEventListener('keydown', e => {
     }
 
 })
+
+//Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+    correctLetters.length = 0
+    wrongLetters.length = 0
+
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
+
+    displayWord()
+
+    updateWrongLettersEl()
+
+    popup.style.display = 'none'
+
+})
+
 
 displayWord()
