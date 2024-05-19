@@ -137,7 +137,7 @@ h1 {
     transform: translate(-50%, 150%);
 }
 
-.message2.visible {
+.message2.visible.true {
     opacity: 1;
     transform: translate(-50%, 150%);
 }

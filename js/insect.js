@@ -30,18 +30,7 @@ function startGame() {
     setInterval(increaseTime, 1000)
 }
 
-function increaseTime() {
-    let m = Math.floor(seconds / 60)
-    let s = seconds % 60
-    if (m < 10) {
-        m = `0${m}`
-    }
-    if (s < 10) {
-        s = `0${s}`
-    }
-    timeEl.innerHTML = `Time: ${m}:${s}`
-    seconds++
-}
+
 
 function createInsect() {
     const insect = document.createElement('div')
@@ -74,11 +63,24 @@ function increaseScore() {
         message.classList.add('visible')
 
     }
-    if (score >= 60) {
+    scoreEl.innerHTML = `Score: ${score}`
+}
+
+function increaseTime() {
+    let m = Math.floor(seconds / 60)
+    let s = seconds % 60
+    if (m < 10) {
+        m = `0${m}`
+    }
+    if (s < 10) {
+        s = `0${s}`
+    }
+    timeEl.innerHTML = `Time: ${m}:${s}`
+    seconds++
+    if (score >= 30) {
         message2.classList.add('visible')
         message.classList.remove('visible')
     }
-    scoreEl.innerHTML = `Score: ${score}`
 }
 
 function getRandomLocation() {
