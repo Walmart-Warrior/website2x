@@ -8,6 +8,7 @@ const figureParts = document.querySelectorAll('.figure-part')
 
 const word = ['application', 'programming', 'interface', 'wizard']
 
+let execute = true
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
 
@@ -31,6 +32,7 @@ function displayWord() {
     if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You Won!'
         popup.style.display = 'flex'
+        execute = false
     }
 }
 
@@ -54,9 +56,9 @@ function updateWrongLettersEl() {
 
     //Check if lost
     if (wrongLetters.length == figureParts.length) {
-        finalMessage.innerText = 'Unfortunately, you lost! The word was '
+        finalMessage.innerHTML = `<p>Unfortunately, you lost! The word was ${selectedWord}.</p>`
         popup.style.display = 'flex'
-
+        execute = false
     }
 }
 
@@ -73,6 +75,7 @@ function showNotification() {
 // Keydown letter press
 window.addEventListener('keydown', e => {
 
+    if (execute == true) {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key
 
@@ -94,7 +97,7 @@ window.addEventListener('keydown', e => {
             }
         }
     }
-
+    }
 })
 
 //Restart game and play again
@@ -110,7 +113,7 @@ playAgainBtn.addEventListener('click', () => {
     updateWrongLettersEl()
 
     popup.style.display = 'none'
-
+    execute = true
 })
 
 
