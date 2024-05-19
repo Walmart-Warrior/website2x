@@ -15,8 +15,8 @@ ball = {
     y: canvas.height / 2,
     size: 10,
     speed: 4,
-    dx: 4,
-    dy: -4,
+    dx: 0,
+    dy: 0,
 }
 
 // Create paddle properties
@@ -126,15 +126,18 @@ function keyDown(e) {
     if (e.key == 'r' || e.key == 'R') {
         paddle.x = (canvas.width / 2) - (paddle.w / 2)
         ball.x = canvas.width / 2
-        ball.y = (canvas.height/2) + 100
+        ball.y = canvas.height / 2
         score = 0
         ball.dy = 0
         ball.dx = 0
-        if (e.key == 'p' || e.key == 'P') {
-            ball.x = ball.x + ball.dx
-            ball.y = ball.y + ball.dy
-        }
+        showAllBricks()
     }
+    if (e.key == 'p' || e.key == 'P') {
+        ball.dx = 4
+        ball.dy = -4
+        ball.x = ball.x + ball.dx
+        ball.y = ball.y + ball.dy
+     }
 }
 
 //Keyup event
