@@ -128,7 +128,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-100%, -150%);
+    transform: translate(-50%, -150%);
     transition: transform 0.4s ease-in;
 }
 
@@ -139,7 +139,7 @@ h1 {
 
 .message2.visible {
     opacity: 1;
-    transform: translate(-100%, 200%);
+    transform: translate(-50%, 150%);
 }
 
 .insect {
