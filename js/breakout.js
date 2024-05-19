@@ -171,7 +171,7 @@ function moveBall() {
     //Brick collision
     bricks.forEach(column => {
         column.forEach(brick => {
-            if (brick.visible) {
+            if (bricks.visible) {
                 if (
                     ball.x - ball.size > brick.x && //left brick side
                     ball.x + ball.size < brick.x + brick.w && //right brick side
@@ -179,7 +179,7 @@ function moveBall() {
                     ball.y - ball.size < brick.y + brick.height //bottom
                 ) {
                     ball.dy = -1 * ball.dy
-                    brick.visible = false
+                    bricks.visible = false
                     increaseScore()
                 }
             }
