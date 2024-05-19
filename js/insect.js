@@ -85,6 +85,9 @@ function increaseTime() {
     if (score >= 60 && seconds < 30) {
         message2.classList.add('visible')
     }
+    if (score < 60 && seconds > 30) {
+        message3.classList.add('visible')
+    }
 }
 
 function getRandomLocation() {
