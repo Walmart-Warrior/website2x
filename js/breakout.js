@@ -164,11 +164,8 @@ function moveBall() {
 
     // wall collision (bottom)
     if (ball.y + ball.size > canvas.height) {
-        ball.dy = -1 * ball.dy
-        ball.x = canvas.width / 2
-        ball.y = (canvas.height/2) + 100
-        showAllBricks()
-        score = 0
+        ball.dy = 0
+        ball.dx = 0
     }
 
     //wall collision (left)
