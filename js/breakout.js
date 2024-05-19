@@ -122,6 +122,10 @@ function keyDown(e) {
     if (e.key == 'ArrowLeft' || ekey == 'Left') {
         paddle.dx = -paddle.speed
     }
+    if (e.key == 'r'){
+        score = 0
+        ball
+    }
 }
 
 //Keyup event
