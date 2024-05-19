@@ -133,6 +133,15 @@ function keyDown(e) {
         showAllBricks()
     }
     if (e.key == 'p' || e.key == 'P') {
+        if (paddle.dx == 0) {
+            paddle.x = (canvas.width / 2) - (paddle.w / 2)
+            ball.x = canvas.width / 2
+            ball.y = canvas.height / 2
+            score = 0
+            ball.dy = 0
+            ball.dx = 0
+            showAllBricks()
+        }
         ball.dx = 4
         ball.dy = -4
         ball.x = ball.x + ball.dx
@@ -166,6 +175,7 @@ function moveBall() {
     if (ball.y + ball.size > canvas.height) {
         ball.dy = 0
         ball.dx = 0
+        paddle.dx = 0
     }
 
     //wall collision (left)
@@ -208,6 +218,12 @@ function increaseScore() {
     if (score == brickRowCount * brickColumnCount) {
         score = 0
         showAllBricks()
+    }
+    if (score == 45)
+    {
+        ball.dx = 0
+        ball.dy = 0
+        paddle.dx = 0
     }
 }
 
