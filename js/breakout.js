@@ -115,12 +115,25 @@ function movePaddle() {
 
 // Keydown Event
 function keyDown(e) {
+
     // console.log(e.key)
     if (e.key == 'ArrowRight' || e.key == 'Right') {
         paddle.dx = paddle.speed
     }
-    if (e.key == 'ArrowLeft' || ekey == 'Left') {
+    if (e.key == 'ArrowLeft' || e.key == 'Left') {
         paddle.dx = -paddle.speed
+    }
+    if (e.key == 'r' || e.key == 'R') {
+        paddle.x = (canvas.width / 2) - (paddle.w / 2)
+        ball.x = canvas.width / 2
+        ball.y = (canvas.height/2) + 100
+        score = 0
+        ball.dy = 0
+        ball.dx = 0
+        if (e.key == 'p' || e.key == 'P') {
+            ball.x = ball.x + ball.dx
+            ball.y = ball.y + ball.dy
+        }
     }
 }
 
@@ -149,6 +162,8 @@ function moveBall() {
     // wall collision (bottom)
     if (ball.y + ball.size > canvas.height) {
         ball.dy = -1 * ball.dy
+        ball.x = canvas.width / 2
+        ball.y = (canvas.height/2) + 100
         showAllBricks()
         score = 0
     }
@@ -208,7 +223,7 @@ function showAllBricks() {
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
 
-console.log(document.addEventListener('keydown', keyDown))
+
 
 //Update the canvas drawing and animation
 function update() {
