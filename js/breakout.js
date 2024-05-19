@@ -171,15 +171,15 @@ function moveBall() {
     //Brick collision
     bricks.forEach(column => {
         column.forEach(brick => {
-            if (bricks.visible) {
+            if (brick.visible) {
                 if (
                     ball.x - ball.size > brick.x && //left brick side
                     ball.x + ball.size < brick.x + brick.w && //right brick side
                     ball.y + ball.size > brick.y  && //top
-                    ball.y - ball.size < brick.y + brick.height //bottom
+                    ball.y - ball.size < brick.y + brick.h //bottom
                 ) {
                     ball.dy = -1 * ball.dy
-                    bricks.visible = false
+                    brick.visible = false
                     increaseScore()
                 }
             }
@@ -207,6 +207,8 @@ function showAllBricks() {
 //Keyboard event handlers
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
+
+console.log(document.addEventListener('keydown', keyDown))
 
 //Update the canvas drawing and animation
 function update() {
