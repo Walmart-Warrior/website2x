@@ -124,7 +124,7 @@ function keyDown(e) {
     }
     if (e.key == 'r'){
         score = 0
-        ball
+        
     }
 }
 
