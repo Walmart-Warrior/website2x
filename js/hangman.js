@@ -54,8 +54,9 @@ function updateWrongLettersEl() {
 
     //Check if lost
     if (wrongLetters.length == figureParts.length) {
-        finalMessage.innerText = 'Unfortunately, you lost!'
+        finalMessage.innerText = 'Unfortunately, you lost! The word was '
         popup.style.display = 'flex'
+
     }
 }
 
