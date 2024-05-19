@@ -63,6 +63,11 @@ function increaseScore() {
         message.classList.add('visible')
 
     }
+    if (score >= 60)
+    {
+        message.classList.remove('visible')
+
+    }
     scoreEl.innerHTML = `Score: ${score}`
 }
 
@@ -77,9 +82,8 @@ function increaseTime() {
     }
     timeEl.innerHTML = `Time: ${m}:${s}`
     seconds++
-    if (score >= 30) {
+    if (score >= 60 && seconds < 30) {
         message2.classList.add('visible')
-        message.classList.remove('visible')
     }
 }
 
