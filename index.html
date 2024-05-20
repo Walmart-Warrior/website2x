@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website2</title>
-</head>
-<body>
-    <h1>This is my 2nd Website!!</h1>
-    <a href="breakout.html">1. breakout</a>
-</body>
-</html>
 
+    <head>
+        <title>Website 2</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+
+
+    <body>
+         <nav class="nav">
+            <div class="container">
+                <h1 class="logo">
+                    <div class="web">
+                        <form name="web">
+                            <select name="websites" id="websites">
+                                <option value="nothing">Select...</option>
+                                <option value="https://walmart-warrior.github.io/website/">Home</option>
+                                <option value="https://walmart-warrior.github.io/website/search.html">1. Breakout</option>
+                                <option value="https://walmart-warrior.github.io/website/loading.html">2. Insect</option>
+                                <option value="https://walmart-warrior.github.io/website/expanding.html">3. Hangman</option>
+                            </select>
+                        </form>
+                    </div>
+                </h1>
+                <ul>
+                    <li><a href="#" class="current">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            </nav>
+
+            <div class="hero">
+                <div class="container">
+                    <h1>Welcome To My 2nd Website</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, sit!</p>
+                </div>
+            </div>
+
+            <section class="container content">
+                <h2>Content One</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam a ipsum ea modi voluptate maxime, ut tempora fugiat quae provident ullam sint eum fugit quis animi id accusantium repellat molestias assumenda perspiciatis qui dicta sequi doloremque quidem. Iure ad possimus voluptas earum neque similique libero vero eum eos nam numquam magni, omnis, exercitationem non pariatur facere voluptatum temporibus ratione aliquam illo? Autem architecto nobis ipsum tempore exercitationem dolorem quos optio, laborum recusandae accusamus. Pariatur eaque soluta labore totam saepe incidunt ullam, sed ipsa doloremque impedit beatae reprehenderit unde praesentium blanditiis! Laboriosam error magnam soluta cum, distinctio quibusdam quaerat delectus maiores.</p>
+                <h3>Content Two</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, cumque. Minus temporibus quas blanditiis itaque explicabo voluptas vitae enim animi sequi reprehenderit magnam nihil aliquid alias saepe, quos optio exercitationem cumque, ducimus assumenda provident. Nostrum voluptatum velit eos nam ut! Aperiam eveniet, dicta necessitatibus in dolorem expedita tempore id nobis?</p>
+            </section>
+            <br>
+            <div>
+            <a href="breakout.html" >
+                <button class="btn">
+                    1. Breakout
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </a>
+
+            <a href="insect.html">
+                <button class="btn">
+                    2. Insect
+                    <i class="fa-solid fa-spinner"></i>
+                </button>
+            </a>
+
+            <a href="hangman.html">
+                <button class="btn">
+                    3. Hangman
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+            </a>
+            </div>
+
+
+        <script src="https://kit.fontawesome.com/fe5b046791.js" crossorigin="anonymous"></script>
+    </body>
+    <script src="js/navigation.js"></script>
+    <script src="js/index.js"></script>
+</html>
