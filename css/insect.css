@@ -184,3 +184,20 @@ h1 {
     width: 100px;
     height: 100px;
 }
+
+.web {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+ }
+
+ .web select {
+    height: 5vh;
+    width: 10vw;
+    background-color: #666;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0;
+ }
